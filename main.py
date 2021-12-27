@@ -1,38 +1,33 @@
-#Kelas utama
 class Laptop:
-  SSD_sekarang = 256
 
-#fungsi construktor
-  def __init__ (self, nama_merk, kapasitas_RAM, CPU_processor):
-    self.nama_merk = nama_merk
-    self.kapasitas_RAM = kapasitas_RAM
-    self.CPU_processor = CPU_processor
-    print(f'Laptop {self.nama_merk},{self.kapasitas_RAM}, {self.CPU_processor} dioperasikan')
+  #static variable
+  SSD = 256
 
-    def menambahSSD(self, menambahSSD):
-      self.SSD_sekarang = self.SSD_sekarang + menambahSSD
-      print('SSD_sekarang ', self.SSD_sekarang)
-   
-#destructor
-  def __del__ (self):
-    print(f'Laptop {self.nama_merk},{self.kapasitas_RAM}, {self.CPU_processor} dimatikan')
-  
+  #instance variable
+  def __init__(self):
+    self.RAM = 8 
+    self.Type = 7470
 
-#membuat objek
-laptop_kuliah = Laptop('Dell','8 GB','Intel core I7')
-laptop_kerja = Laptop('Macbook','16 GB','Mac OS' )
 
-print(' ')
-print('=================================================')
-print(' ')
+Laptop_Dell = Laptop()
+Laptop_Lenovo = Laptop()
 
-del laptop_kuliah
-del laptop_kerja
+Laptop_Dell.RAM = 16
+Laptop_Dell.Type = 5470
 
-print(' ')
-print('=================================================')
-print(' ')
 
-print('SSD Laptop Sekarang :', Laptop.SSD_sekarang)
-print('SSD Laptop setelah ditambah :', Laptop.SSD_sekarang + 256)
+Laptop.SSD = 512
+
+print("\n")
+print("RAM :", Laptop_Dell.RAM)
+print("Type :", Laptop_Dell.Type )
+print("SSD : ", Laptop_Dell.SSD)
+
+print(" ")
+print("======================================")
+print(" ")
+
+print("RAM :", Laptop_Lenovo.RAM)
+print("Type :", Laptop_Lenovo.Type )
+print("SSD : ", Laptop_Lenovo.SSD)
 
